@@ -89,4 +89,30 @@ describe('SauceDemo - Login', function () {
 
     await salvarScreenshot('login-invalido-saucedemo.png');
   });
+  it('Deve exibir erro ao tentar login com usuário bloqueado', async function () {
+  await driver.get('https://www.saucedemo.com/');
+
+  await driver.findElement(By.css('[data-test="username"]')).sendKeys('locked_out_user');
+  await driver.findElement(By.css('[data-test="password"]')).sendKeys('secret_sauce');
+  await driver.findElement(By.css('[data-test="login-button"]')).click();
+
+  const errorElement = await driver.wait(
+    until.elementLocated(By.css('[data-test="error"]')),
+    10000
+  );
+
+  const isDisplayed = await errorElement.isDisplayed();
+  assert.strictEqual(isDisplayed, true);
+
+  const errorText = await errorElement.getText();
+
+  assert.ok(
+    errorText.includes('Sorry, this user has been locked out')
+  );
+
+  const currentUrl = await driver.getCurrentUrl();
+  assert.ok(!currentUrl.includes('/inventory.html'));
+
+  await salvarScreenshot('login-usuario-bloqueado-saucedemo.png');
+});
 });
