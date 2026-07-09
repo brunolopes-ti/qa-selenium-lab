@@ -1,0 +1,19 @@
+{
+  "name": "qa-selenium-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js --timeout 30000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "selenium-webdriver": "^4.45.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.6"
+  }
+}
