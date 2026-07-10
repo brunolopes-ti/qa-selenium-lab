@@ -72,4 +72,47 @@ describe('SauceDemo - Carrinho', function () {
 
     await salvarScreenshot('produto-adicionado-carrinho-saucedemo.png');
   });
+
+  it('Deve validar produto adicionado na página do carrinho', async function () {
+    await realizarLoginValido();
+
+    await driver.findElement(By.css('[data-test="add-to-cart-sauce-labs-backpack"]')).click();
+    await driver.findElement(By.css('[data-test="shopping-cart-link"]')).click();
+
+    await driver.wait(until.urlContains('/cart.html'), 10000);
+
+    const currentUrl = await driver.getCurrentUrl();
+    assert.ok(currentUrl.includes('/cart.html'));
+
+    const titleElement = await driver.wait(
+      until.elementLocated(By.css('.title')),
+      10000
+    );
+
+    const titleText = await titleElement.getText();
+    assert.strictEqual(titleText, 'Your Cart');
+
+    const productName = await driver.findElement(
+      By.css('[data-test="inventory-item-name"]')
+    );
+
+    const productNameText = await productName.getText();
+    assert.strictEqual(productNameText, 'Sauce Labs Backpack');
+
+    const productPrice = await driver.findElement(
+      By.css('[data-test="inventory-item-price"]')
+    );
+
+    const productPriceText = await productPrice.getText();
+    assert.strictEqual(productPriceText, '$29.99');
+
+    const checkoutButton = await driver.findElement(
+      By.css('[data-test="checkout"]')
+    );
+
+    const isCheckoutDisplayed = await checkoutButton.isDisplayed();
+    assert.strictEqual(isCheckoutDisplayed, true);
+
+    await salvarScreenshot('validacao-carrinho-saucedemo.png');
+  });
 });
