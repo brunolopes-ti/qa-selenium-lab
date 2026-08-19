@@ -1,25 +1,38 @@
 # QA Selenium Lab
 
-Projeto de portfólio criado para praticar, organizar e documentar testes automatizados end-to-end com Selenium WebDriver e JavaScript.
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green)
+![JavaScript](https://img.shields.io/badge/JavaScript-Test%20Automation-yellow)
+![Node.js](https://img.shields.io/badge/Node.js-Runtime-green)
+![Mocha](https://img.shields.io/badge/Mocha-Test%20Runner-brown)
+![E2E Testing](https://img.shields.io/badge/E2E-Web%20Automation-blue)
 
-O objetivo deste projeto é demonstrar uma suíte de automação web cobrindo fluxos reais de uma aplicação de e-commerce de treino, com validações, evidências e execução completa via terminal.
+Projeto de portfólio desenvolvido para praticar, organizar e documentar **testes automatizados end-to-end com Selenium WebDriver e JavaScript**.
+
+O projeto demonstra uma suíte de automação Web cobrindo fluxos funcionais do SauceDemo, com validações, cenários positivos e negativos, evidências e execução completa via terminal utilizando **Mocha** como test runner.
+
+---
 
 ## Tecnologias utilizadas
 
-- Selenium WebDriver
-- JavaScript
-- Node.js
-- Mocha
-- SauceDemo
-- Git
-- GitHub
-- Markdown
+- Selenium WebDriver;
+- JavaScript;
+- Node.js;
+- Mocha;
+- SauceDemo;
+- Git;
+- GitHub;
+- Markdown;
+- Visual Studio Code.
+
+---
 
 ## Sistema utilizado para teste
 
 Aplicação: [SauceDemo](https://www.saucedemo.com/)
 
-O SauceDemo é uma aplicação web utilizada para estudos de QA, permitindo praticar fluxos como login, carrinho e checkout.
+O SauceDemo é uma aplicação Web utilizada para estudos e práticas de QA, permitindo validar fluxos como autenticação, carrinho e checkout.
+
+---
 
 ## Escopo da automação
 
@@ -33,13 +46,15 @@ A suíte automatizada cobre os seguintes fluxos:
 - Checkout completo;
 - Execução da suíte completa via terminal.
 
+---
+
 ## Estrutura do projeto
 
 ```text
-qa-selenium-lab
-├── docs
-│   └── evidencias
-│       └── selenium
+qa-selenium-lab/
+├── docs/
+│   └── evidencias/
+│       └── selenium/
 │           ├── login-valido-teste-passando.png
 │           ├── login-valido-saucedemo.png
 │           ├── login-invalido-teste-passando.png
@@ -53,7 +68,7 @@ qa-selenium-lab
 │           ├── checkout-completo-teste-passando.png
 │           ├── checkout-completo-saucedemo.png
 │           └── suite-completa-selenium-passando.png
-├── tests
+├── tests/
 │   ├── saucedemo-login.test.js
 │   ├── saucedemo-cart.test.js
 │   └── saucedemo-checkout.test.js
@@ -63,33 +78,41 @@ qa-selenium-lab
 └── README.md
 ```
 
+---
+
 ## Como executar o projeto
 
-Instale as dependências, caso necessário:
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
-Execute toda a suíte de testes:
+Execute toda a suíte:
 
 ```bash
 npm test
 ```
 
-Execute um arquivo específico:
+Execute apenas os testes de login:
 
 ```bash
 npx mocha tests/saucedemo-login.test.js --timeout 30000
 ```
 
+Execute os testes de carrinho:
+
 ```bash
 npx mocha tests/saucedemo-cart.test.js --timeout 30000
 ```
 
+Execute os testes de checkout:
+
 ```bash
 npx mocha tests/saucedemo-checkout.test.js --timeout 30000
 ```
+
+---
 
 ## Arquivos de teste
 
@@ -132,6 +155,8 @@ Cenário coberto:
 
 - Realizar checkout completo com sucesso.
 
+---
+
 ## Cenários automatizados
 
 ### CT-01 - Login válido
@@ -158,6 +183,8 @@ docs/evidencias/selenium/login-valido-teste-passando.png
 docs/evidencias/selenium/login-valido-saucedemo.png
 ```
 
+---
+
 ### CT-02 - Login inválido
 
 **Objetivo:** validar que o sistema exibe mensagem de erro ao tentar login com credenciais inválidas.
@@ -180,6 +207,8 @@ docs/evidencias/selenium/login-valido-saucedemo.png
 docs/evidencias/selenium/login-invalido-teste-passando.png
 docs/evidencias/selenium/login-invalido-saucedemo.png
 ```
+
+---
 
 ### CT-03 - Login com usuário bloqueado
 
@@ -204,6 +233,8 @@ docs/evidencias/selenium/login-usuario-bloqueado-teste-passando.png
 docs/evidencias/selenium/login-usuario-bloqueado-saucedemo.png
 ```
 
+---
+
 ### CT-04 - Adicionar produto ao carrinho
 
 **Objetivo:** validar que um produto pode ser adicionado ao carrinho com sucesso.
@@ -227,6 +258,8 @@ docs/evidencias/selenium/produto-adicionado-carrinho-teste-passando.png
 docs/evidencias/selenium/produto-adicionado-carrinho-saucedemo.png
 ```
 
+---
+
 ### CT-05 - Validar produto na página do carrinho
 
 **Objetivo:** validar que o produto adicionado aparece corretamente na página do carrinho.
@@ -245,6 +278,8 @@ docs/evidencias/selenium/produto-adicionado-carrinho-saucedemo.png
 docs/evidencias/selenium/validacao-carrinho-teste-passando.png
 docs/evidencias/selenium/validacao-carrinho-saucedemo.png
 ```
+
+---
 
 ### CT-06 - Checkout completo
 
@@ -275,15 +310,17 @@ docs/evidencias/selenium/checkout-completo-teste-passando.png
 docs/evidencias/selenium/checkout-completo-saucedemo.png
 ```
 
+---
+
 ## Resultado da suíte completa
 
-A suíte foi executada via terminal com o comando:
+A suíte foi executada via terminal com:
 
 ```bash
 npm test
 ```
 
-Resultado obtido:
+Resultado:
 
 ```text
 saucedemo-login.test.js       3 testes passando
@@ -293,13 +330,11 @@ saucedemo-checkout.test.js    1 teste passando
 Total: 6 testes passando
 ```
 
-**Evidência da execução completa:**
-
-```text
-docs/evidencias/selenium/suite-completa-selenium-passando.png
-```
+### Evidência
 
 ![Suíte completa Selenium passando](docs/evidencias/selenium/suite-completa-selenium-passando.png)
+
+---
 
 ## Evidências visuais
 
@@ -337,6 +372,8 @@ docs/evidencias/selenium/suite-completa-selenium-passando.png
 
 ![Checkout finalizado com sucesso](docs/evidencias/selenium/checkout-completo-saucedemo.png)
 
+---
+
 ## Boas práticas aplicadas
 
 - Separação dos testes por fluxo funcional;
@@ -344,14 +381,40 @@ docs/evidencias/selenium/suite-completa-selenium-passando.png
 - Validações de URL, textos, elementos visíveis e fluxo de navegação;
 - Uso de `async/await` para controle das ações automatizadas;
 - Uso de waits explícitos com `until`;
-- Geração de evidências com screenshot;
-- Organização das evidências em pasta específica para documentação;
+- Organização dos testes em arquivos separados por funcionalidade;
+- Geração de evidências com screenshots;
+- Organização das evidências em pasta específica;
 - Execução da suíte completa via terminal;
 - Controle de arquivos temporários com `.gitignore`.
 
+---
+
+## Competências demonstradas
+
+Este projeto demonstra conhecimentos práticos em:
+
+- Automação de testes Web;
+- Testes end-to-end;
+- Selenium WebDriver;
+- JavaScript;
+- Node.js;
+- Mocha;
+- Testes funcionais automatizados;
+- Cenários positivos e negativos;
+- Seletores Web;
+- Esperas explícitas;
+- `async/await`;
+- Automação de login, carrinho e checkout;
+- Execução via terminal;
+- Git e GitHub;
+- Evidências de execução;
+- Documentação técnica.
+
+---
+
 ## Observações
 
-As evidências geradas pelos testes foram salvas na pasta:
+As evidências geradas pelos testes estão armazenadas em:
 
 ```text
 docs/evidencias/selenium
@@ -359,17 +422,30 @@ docs/evidencias/selenium
 
 A pasta `node_modules` foi adicionada ao `.gitignore`, evitando versionar dependências instaladas localmente.
 
+---
+
 ## Status do projeto
 
-Concluído nesta etapa.
+**Concluído nesta etapa.**
 
-Suíte automatizada Selenium criada, organizada, executada e documentada com sucesso.
+Suíte automatizada com Selenium WebDriver criada, organizada, executada e documentada com sucesso.
+
+---
 
 ## Próximas melhorias possíveis
 
-- Criar comandos auxiliares reutilizáveis;
 - Aplicar Page Object Model;
 - Utilizar massa de dados externa;
-- Adicionar testes negativos no checkout;
+- Adicionar cenários negativos no checkout;
+- Criar funções auxiliares reutilizáveis;
 - Executar testes em pipeline de CI/CD;
-- Criar projeto complementar com Playwright.
+- Explorar relatórios automatizados.
+
+---
+
+## Autor
+
+**Bruno Ramos Lopes**
+
+LinkedIn: [linkedin.com/in/brunolopes-ti](https://linkedin.com/in/brunolopes-ti)  
+GitHub: [github.com/brunolopes-ti](https://github.com/brunolopes-ti)
